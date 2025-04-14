@@ -1,3 +1,5 @@
+const prompt = require("prompt-sync")();
+
 /*
 ===========================================
 🐾 Debugging & Exception Handling Activity
@@ -46,9 +48,13 @@ let animals = [];
 let fees = [];
 
 function addAnimal(name, fee) {
-    if (!name || fee < 0) {
-        throw new Error("Invalid animal name or adoption fee!");
+    if (name == "") {
+        throw new Error("Please enter an animal name!");
     }
+    else if (fee < 0 )
+        {
+            throw new Error ("Please enter a valid fee.");
+        }
     animals.push(name);
     fees.push(fee);
 }
@@ -101,7 +107,7 @@ while (true) {
             console.log("Invalid action. Please choose 'add', 'fee', or 'exit'.");
         }
 
-    } catch (err) {
+     } catch (err) {
         console.log("Unexpected error:", err.message);
     }
 }
@@ -110,16 +116,25 @@ while (true) {
 // 🧩 Problems to Solve
 // ============================================
 
-/*
+/*  original output was unexpected error for
+  not installing the prompt module using npm
+
 🔹 Invalid Input Errors:
 - What if the user enters a negative fee?
+    Display an error msg to enter a valid fee
 - What if the animal name is blank?
+    Display an error msg to enter animal name
 - What if an animal isn't found?
+    Display a error msg animal not found.
 
 🔹 Code Flow Problems:
 - What happens when an exception is thrown?
+    The error gets caught in the catch block and based on the err, a customized message is displayed on the console.
 - Does the rest of the program continue?
+    Yes, the rest of the program continues prompting the user to select an option to proceed.
 
 🔹 Structured Exception Handling:
 - Add `try/catch` blocks to catch these errors and allow the app to continue running.
 */
+
+
