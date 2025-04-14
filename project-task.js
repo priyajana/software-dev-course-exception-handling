@@ -51,7 +51,7 @@ function addAnimal(name, fee) {
     if (name == "") {
         throw new Error("Please enter an animal name!");
     }
-    else if (fee < 0 )
+    else if (fee < 0 || fee == "" )
         {
             throw new Error ("Please enter a valid fee.");
         }
@@ -129,7 +129,7 @@ while (true) {
 
 🔹 Code Flow Problems:
 - What happens when an exception is thrown?
-    The error gets caught in the catch block and based on the err, a customized message is displayed on the console.
+    The error gets caught in the catch block and based on the error, a customized message is displayed on the console.
 - Does the rest of the program continue?
     Yes, the rest of the program continues prompting the user to select an option to proceed.
 
