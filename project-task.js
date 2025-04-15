@@ -55,6 +55,7 @@ function addAnimal(name, fee) {
         {
             throw new Error ("Please enter a valid fee.");
         }
+    
     animals.push(name);
     fees.push(fee);
 }
@@ -116,8 +117,21 @@ while (true) {
 // 🧩 Problems to Solve
 // ============================================
 
-/*  original output was unexpected error for
-  not installing the prompt module using npm
+/*  
+    Errors Encountered
+    ---------------------
+    1.Original output was unexpected error for
+    not installing the prompt module using npm.
+
+    2.If animal field is left blank or if fee entered in negative,
+    Error displayed : Error adding animal:Invalid animal name or adoption fee!
+
+    3.If fee option chosen and if the entered animal name is not in records,
+    Error displayed : Error retrieving fee: Animal not found in records!
+
+    4. If action chosen is not add, fee, or exit,
+    Error displayed : Invalid action. Please choose 'add', 'fee', or 'exit'.
+
 
 🔹 Invalid Input Errors:
 - What if the user enters a negative fee?
