@@ -149,6 +149,10 @@ while (true) {
 
 🔹 Structured Exception Handling:
 - Add `try/catch` blocks to catch these errors and allow the app to continue running.
+
+
+OUTPUT
+--------------
 */
 
 
